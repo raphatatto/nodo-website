@@ -1,0 +1,222 @@
+/*
+ * NODO — Estilos globais
+ * Fonte canônica dos tokens: NODO/tokens.css (Design System v1.1 — Dark Blue Edition).
+ * Este arquivo NÃO redefine valores de marca: apenas expõe os tokens ao Tailwind
+ * e adiciona o que o README do DS prevê para a aplicação (§14/§15).
+ */
+@import 'tailwindcss';
+@import '../../NODO/tokens.css';
+
+/*
+ * Paleta restrita à Dark Blue Edition: a paleta padrão do Tailwind é removida
+ * para impedir cores fora da identidade (ex.: verdes). Demais escalas do Tailwind
+ * (spacing, sizing, etc.) continuam disponíveis para composição artística.
+ */
+@theme {
+  --color-*: initial;
+}
+
+/*
+ * `reference` = não emite variáveis (os valores já existem em NODO/tokens.css);
+ * `inline`    = os utilitários usam diretamente o var() do token, reagindo ao data-theme.
+ */
+@theme inline reference {
+  /* Paleta de marca (constante) */
+  --color-carbon: var(--nodo-carbon);
+  --color-graphite: var(--nodo-graphite);
+  --color-steel: var(--nodo-steel);
+  --color-silver: var(--nodo-silver);
+  --color-paper: var(--nodo-paper);
+  --color-white: var(--nodo-white);
+  --color-navy: var(--nodo-navy);
+  --color-navy-hover: var(--nodo-blue-hover);
+  --color-blue-deep: var(--nodo-blue-deep);
+  --color-blue-light: var(--nodo-blue-light);
+  --color-ink-muted: var(--nodo-ink-muted);
+  --color-border-light: var(--nodo-border-light);
+
+  /* Semânticas (mudam com data-theme="light|dark|signal") */
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-fg: var(--color-text);
+  --color-muted: var(--color-muted);
+  --color-line: var(--color-border);
+  --color-control: var(--color-control-border);
+  --color-accent: var(--color-accent);
+  --color-on-accent: var(--color-on-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-detail: var(--color-accent-detail);
+  --color-accent-border: var(--color-accent-border);
+  --color-focus: var(--color-focus);
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+
+  /* Famílias */
+  --font-sans: var(--font-body);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  /* Escala tipográfica fluida (--type-*), com entrelinha e tracking acoplados */
+  --text-hero: var(--type-hero);
+  --text-hero--line-height: var(--leading-display);
+  --text-hero--letter-spacing: var(--tracking-display);
+  --text-h1: var(--type-h1);
+  --text-h1--line-height: var(--leading-heading);
+  --text-h1--letter-spacing: var(--tracking-display);
+  --text-h2: var(--type-h2);
+  --text-h2--line-height: var(--leading-heading);
+  --text-h2--letter-spacing: var(--tracking-display);
+  --text-h3: var(--type-h3);
+  --text-h3--line-height: var(--leading-heading);
+  --text-h3--letter-spacing: var(--tracking-display);
+  --text-body-lg: var(--type-body-lg);
+  --text-body-lg--line-height: var(--leading-body);
+  --text-body: var(--type-body);
+  --text-body--line-height: var(--leading-body);
+  --text-small: var(--type-small);
+  --text-small--line-height: var(--leading-body);
+  --text-label: var(--type-label);
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: var(--tracking-label);
+
+  /* Layout */
+  --spacing-gutter: var(--page-gutter);
+  --spacing-section: var(--section-space);
+  --spacing-grid: var(--grid-gap);
+  --spacing-control: var(--control-min);
+  --container-layout: var(--layout-max);
+
+  /* Radius do DS (sm = 4px, md = 8px, pill) */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-pill: var(--radius-pill);
+
+  /* Easing */
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+}
+
+/* Durações de motion do DS → `duration-fast`, `duration-standard`, ... */
+@utility duration-fast {
+  transition-duration: var(--motion-fast);
+}
+@utility duration-standard {
+  transition-duration: var(--motion-standard);
+}
+@utility duration-reveal {
+  transition-duration: var(--motion-reveal);
+}
+@utility duration-scene {
+  transition-duration: var(--motion-scene);
+}
+
+/* Grid editorial 4 / 8 / 12 colunas (DS §08) */
+@utility grid-editorial {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Camada de aplicação sobre os tokens (prevista no README §15)
+ * ------------------------------------------------------------------------- */
+
+/* Fontes carregadas via next/font ligadas aos tokens de família */
+:root {
+  --font-display: var(--font-display-loaded, 'Space Grotesk'), Arial, sans-serif;
+  --font-body: var(--font-body-loaded, 'Geist'), Arial, sans-serif;
+  --font-mono: var(--font-mono-loaded, 'IBM Plex Mono'), monospace;
+}
+
+/*
+ * Extensão proposta ao DS: borda do CTA primário por tema.
+ * README §05/§15: em Dark, CTA Navy com contorno Blue Light.
+ * Candidato a entrar em NODO/tokens.json como `color-accent-border`.
+ */
+:root,
+[data-theme='light'],
+[data-theme='signal'] {
+  --color-accent-border: transparent;
+}
+[data-theme='dark'] {
+  --color-accent-border: var(--nodo-blue-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-standard: 0ms;
+    --motion-reveal: 0ms;
+    --motion-scene: 0ms;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100svh;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  [data-theme] {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-display);
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background-color: var(--nodo-navy);
+    color: var(--nodo-white);
+  }
+  [data-theme='signal'] ::selection {
+    background-color: var(--nodo-paper);
+    color: var(--nodo-navy);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}

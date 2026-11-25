@@ -1,0 +1,208 @@
+{
+  "manifestVersion": 3,
+  "name": "NODO",
+  "namespace": "Nodo",
+  "files": [
+    "assets/Referências temáticas/README.md",
+    "assets/Referências visuais/README.md",
+    "assets/referencias visuais/README.md",
+    "components/Button/README.md",
+    "components/SectionLabel/README.md",
+    "components/TextField/README.md",
+    "components/bundle.css",
+    "tokens.css",
+    "visual-research.md"
+  ],
+  "libraries": [],
+  "components": [
+    {
+      "name": "Button",
+      "group": "Actions",
+      "summary": "Variantes: primary, secondary, outline, text."
+    },
+    {
+      "name": "SectionLabel",
+      "group": "Editorial",
+      "summary": "Numeração + nome."
+    },
+    {
+      "name": "TextField",
+      "group": "Forms",
+      "summary": "TextField / Textarea."
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "Referências visuais",
+      "tile": "l",
+      "order": [
+        "a-editorial-minimalism.png",
+        "b-immersive-futurism.png",
+        "c-editorial-futurism.png"
+      ],
+      "files": [
+        {
+          "path": "assets/Referências visuais/a-editorial-minimalism.png",
+          "id": "48155fbb0bea895da9164ed129fcdfae"
+        },
+        {
+          "path": "assets/Referências visuais/b-immersive-futurism.png",
+          "id": "b47d050af410c93662242d01ca669dd7"
+        },
+        {
+          "path": "assets/Referências visuais/c-editorial-futurism.png",
+          "id": "0ff2f99d0c1bbd582a13287b65cd1ca9"
+        }
+      ]
+    },
+    {
+      "name": "referencias visuais",
+      "tile": "l",
+      "order": [
+        "1-nodo-art-direction.png",
+        "2-editorial-design.png",
+        "3-basement.png",
+        "4-lusion.png"
+      ],
+      "files": [
+        {
+          "path": "assets/referencias visuais/1-nodo-art-direction.png",
+          "id": "541fd051886f3f2feaca91fde41a2d0e"
+        },
+        {
+          "path": "assets/referencias visuais/2-editorial-design.png",
+          "id": "568e31f3228c85a8109ed7015eeb9098"
+        },
+        {
+          "path": "assets/referencias visuais/3-basement.png",
+          "id": "51f1be708e3b27472fe00c5dbbc17b26"
+        },
+        {
+          "path": "assets/referencias visuais/4-lusion.png",
+          "id": "6cb7e3b6567c9cbd8f8bf7f93d9ce423"
+        }
+      ]
+    },
+    {
+      "name": "Referências temáticas",
+      "tile": "l",
+      "order": [
+        "1-objetos-metalicos-abstratos.png",
+        "2-fotografia-editorial.png",
+        "3-objetos-translucidos.png",
+        "4-inteligencia-e-conexoes.png",
+        "5-mockups-de-projetos.png",
+        "6-materiais-e-texturas.png"
+      ],
+      "files": [
+        {
+          "path": "assets/Referências temáticas/1-objetos-metalicos-abstratos.png",
+          "id": "5ceb50d4a84d2b59ca6a87313ce591f3"
+        },
+        {
+          "path": "assets/Referências temáticas/2-fotografia-editorial.png",
+          "id": "869901709c972d96947652789a8d856d"
+        },
+        {
+          "path": "assets/Referências temáticas/3-objetos-translucidos.png",
+          "id": "986fe01cb46ea30a91d3af864faa35d7"
+        },
+        {
+          "path": "assets/Referências temáticas/4-inteligencia-e-conexoes.png",
+          "id": "42fb972091622c2c901e727c229efc1f"
+        },
+        {
+          "path": "assets/Referências temáticas/5-mockups-de-projetos.png",
+          "id": "67d6b772fc3d2a1cf0fd3d94073ae27b"
+        },
+        {
+          "path": "assets/Referências temáticas/6-materiais-e-texturas.png",
+          "id": "3b8f8baef30e8ccc72bed4fb883877d1"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "files": {
+      "assets/Referências temáticas/1-objetos-metalicos-abstratos.png": {
+        "store": "blob",
+        "id": "5ceb50d4a84d2b59ca6a87313ce591f3",
+        "bytes": 1313688,
+        "type": "image/png"
+      },
+      "assets/Referências temáticas/2-fotografia-editorial.png": {
+        "store": "blob",
+        "id": "869901709c972d96947652789a8d856d",
+        "bytes": 566268,
+        "type": "image/png"
+      },
+      "assets/Referências temáticas/3-objetos-translucidos.png": {
+        "store": "blob",
+        "id": "986fe01cb46ea30a91d3af864faa35d7",
+        "bytes": 2411133,
+        "type": "image/png"
+      },
+      "assets/Referências temáticas/4-inteligencia-e-conexoes.png": {
+        "store": "blob",
+        "id": "42fb972091622c2c901e727c229efc1f",
+        "bytes": 1556706,
+        "type": "image/png"
+      },
+      "assets/Referências temáticas/5-mockups-de-projetos.png": {
+        "store": "blob",
+        "id": "67d6b772fc3d2a1cf0fd3d94073ae27b",
+        "bytes": 587623,
+        "type": "image/png"
+      },
+      "assets/Referências temáticas/6-materiais-e-texturas.png": {
+        "store": "blob",
+        "id": "3b8f8baef30e8ccc72bed4fb883877d1",
+        "bytes": 1661730,
+        "type": "image/png"
+      },
+      "assets/Referências visuais/a-editorial-minimalism.png": {
+        "store": "blob",
+        "id": "48155fbb0bea895da9164ed129fcdfae",
+        "bytes": 180321,
+        "type": "image/png"
+      },
+      "assets/Referências visuais/b-immersive-futurism.png": {
+        "store": "blob",
+        "id": "b47d050af410c93662242d01ca669dd7",
+        "bytes": 1415118,
+        "type": "image/png"
+      },
+      "assets/Referências visuais/c-editorial-futurism.png": {
+        "store": "blob",
+        "id": "0ff2f99d0c1bbd582a13287b65cd1ca9",
+        "bytes": 345155,
+        "type": "image/png"
+      },
+      "assets/referencias visuais/1-nodo-art-direction.png": {
+        "store": "blob",
+        "id": "541fd051886f3f2feaca91fde41a2d0e",
+        "bytes": 852373,
+        "type": "image/png"
+      },
+      "assets/referencias visuais/2-editorial-design.png": {
+        "store": "blob",
+        "id": "568e31f3228c85a8109ed7015eeb9098",
+        "bytes": 129144,
+        "type": "image/png"
+      },
+      "assets/referencias visuais/3-basement.png": {
+        "store": "blob",
+        "id": "51f1be708e3b27472fe00c5dbbc17b26",
+        "bytes": 462665,
+        "type": "image/png"
+      },
+      "assets/referencias visuais/4-lusion.png": {
+        "store": "blob",
+        "id": "6cb7e3b6567c9cbd8f8bf7f93d9ce423",
+        "bytes": 348904,
+        "type": "image/png"
+      }
+    },
+    "blobBytesUsed": 11830828
+  }
+}

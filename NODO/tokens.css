@@ -1,0 +1,173 @@
+/* NODO — generated from tokens.json */
+:root, [data-theme="light"] {
+  --nodo-carbon: #101010; /* Carbon — Fundo escuro, texto principal claro. */
+  --nodo-graphite: #202020; /* Graphite — Superfícies escuras secundárias. */
+  --nodo-steel: #3b3b3b; /* Steel — Divisores escuros decorativos. */
+  --nodo-silver: #b5b5b5; /* Silver — Textos secundários escuros, referência de metal. */
+  --nodo-paper: #f2f2ed; /* Paper — Fundo editorial, texto em áreas escuras. */
+  --nodo-white: #ffffff; /* White — Texto sobre Navy, superfícies limpas. */
+  --nodo-navy: #17346e; /* Navy / Signal — Azul-marinho protagonista: CTAs, detalhes, blocos de impacto. */
+  --nodo-signal: var(--nodo-navy); /* legacy alias — --nodo-signal permanece como alias para compatibilidade com código anterior, agora apontando para Navy. */
+  --nodo-blue-hover: #244784; /* Navy Hover — Estado hover do azul. */
+  --nodo-blue-light: #a6bdf1; /* Blue Light — Foco, indicadores e detalhes legíveis sobre fundos escuros; não é segunda cor dominante. */
+  --nodo-blue-deep: #0d1d40; /* Blue Deep — Superfície azul escura e profundidade. */
+  --nodo-ink-muted: #595959; /* Muted Ink — Texto secundário em fundos claros. */
+  --nodo-border-light: #c5c5bf; /* Border Light — Divisores claros decorativos. */
+  --nodo-error: #b42318; /* Feedback semântico de erro (nunca elemento de marca). */
+  --nodo-success: #17663a; /* Feedback semântico de sucesso (nunca elemento de marca). */
+  --nodo-error-dark: #ffb4ab; /* Feedback semântico de erro em fundos escuros. */
+  --nodo-success-dark: #92e7ae; /* Feedback semântico de sucesso em fundos escuros. */
+  --color-bg: var(--nodo-paper); /* Fundo do tema. Light: Paper · Dark: Carbon · Signal: Navy. */
+  --color-surface: var(--nodo-white); /* Superfície. */
+  --color-text: var(--nodo-carbon); /* Texto do tema. Light: Carbon · Dark: Paper · Signal: Paper. */
+  --color-muted: var(--nodo-ink-muted); /* Texto secundário. */
+  --color-border: var(--nodo-border-light); /* Divisores. */
+  --color-control-border: var(--nodo-ink-muted); /* Borda de controles. */
+  --color-accent: var(--nodo-signal); /* CTA. Light: Navy com texto branco · Dark: Navy com texto branco e contorno Blue Light · Signal: Paper com texto Navy. */
+  --color-on-accent: var(--nodo-white); /* Texto sobre color-accent. */
+  --color-accent-hover: var(--nodo-blue-hover); /* Hover de color-accent. */
+  --color-accent-detail: var(--nodo-signal); /* Detalhes em cor de acento. */
+  --color-focus: var(--nodo-signal); /* Anel de foco (:focus-visible). */
+  --color-error: var(--nodo-error); /* Erro. */
+  --color-success: var(--nodo-success); /* Sucesso. */
+}
+[data-theme="dark"] {
+  --nodo-signal: var(--nodo-navy);
+  --color-bg: var(--nodo-carbon);
+  --color-surface: var(--nodo-graphite);
+  --color-text: var(--nodo-paper);
+  --color-muted: var(--nodo-silver);
+  --color-border: var(--nodo-steel);
+  --color-control-border: var(--nodo-silver);
+  --color-accent: var(--nodo-signal);
+  --color-on-accent: var(--nodo-white);
+  --color-accent-hover: var(--nodo-blue-hover);
+  --color-accent-detail: var(--nodo-blue-light);
+  --color-focus: var(--nodo-blue-light);
+  --color-error: var(--nodo-error-dark);
+  --color-success: var(--nodo-success-dark);
+}
+[data-theme="signal"] {
+  --nodo-signal: var(--nodo-navy);
+  --color-bg: var(--nodo-signal);
+  --color-surface: var(--nodo-blue-deep);
+  --color-text: var(--nodo-paper);
+  --color-muted: var(--nodo-blue-light);
+  --color-border: var(--nodo-blue-hover);
+  --color-control-border: var(--nodo-blue-light);
+  --color-accent: var(--nodo-paper);
+  --color-on-accent: var(--nodo-signal);
+  --color-accent-hover: var(--nodo-blue-light);
+  --color-accent-detail: var(--nodo-blue-light);
+  --color-focus: var(--nodo-paper);
+  --color-error: var(--nodo-error-dark);
+  --color-success: var(--nodo-success-dark);
+}
+:root {
+  --space-1: 0.25rem; /* 4 px */
+  --space-2: 0.5rem; /* 8 px */
+  --space-3: 0.75rem; /* 12 px */
+  --space-4: 1rem; /* 16 px */
+  --space-5: 1.5rem; /* 24 px */
+  --space-6: 2rem; /* 32 px */
+  --space-7: 3rem; /* 48 px */
+  --space-8: 4rem; /* 64 px */
+  --space-9: 6rem; /* 96 px */
+  --space-10: 8rem; /* 128 px */
+  --radius-none: 0; /* 0 */
+  --radius-sm: 0.25rem; /* 4 px */
+  --radius-md: 0.5rem; /* 8 px */
+  --radius-pill: 9999px; /* Pill somente para tags/ícones quando necessário. */
+  --page-gutter: clamp(1.25rem, 4.45vw, 4rem); /* Margem lateral: Desktop 64 px · Tablet 32 px · Mobile 20 px. */
+  --section-space: clamp(4rem, 9vw, 8rem); /* Espaço entre seções: Desktop 128 px · Tablet 96 px · Mobile 64 px. */
+  --layout-max: 100rem; /* Largura máxima do conteúdo: 1600 px. */
+  --grid-gap: clamp(1rem, 2vw, 1.5rem); /* Gutter: Desktop 24 px · Tablet 20 px · Mobile 16 px. */
+  --line-width: 1px; /* Linhas de 1 px. */
+  --control-min: 2.75rem; /* Área interativa alvo de pelo menos 44 × 44 px. */
+  --type-hero: clamp(3rem, 9.2vw, 9rem);
+  --type-h1: clamp(2.75rem, 6.4vw, 6rem);
+  --type-h2: clamp(2.25rem, 5vw, 4.5rem);
+  --type-h3: clamp(1.5rem, 2.8vw, 2.5rem);
+  --type-body-lg: clamp(1.125rem, 1.5vw, 1.375rem);
+  --type-body: 1rem;
+  --type-small: .875rem;
+  --type-label: .75rem;
+  --leading-display: .95;
+  --leading-heading: 1.08;
+  --leading-body: 1.6;
+  --tracking-display: -.055em;
+  --tracking-label: .07em;
+  --motion-fast: 180ms; /* Fast — Hover, foco e links. */
+  --motion-standard: 350ms; /* Standard — Botões, menus e accordions. */
+  --motion-reveal: 750ms; /* Reveal — Entrada de texto e imagem. */
+  --motion-scene: 1000ms; /* Cinematic — Transição especial entre páginas/cenas. */
+  --ease-out: cubic-bezier(.22, 1, .36, 1); /* Curva principal. Para GSAP, power3.out é alternativa semelhante, não a mesma curva matemática. */
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --font-display: "Space Grotesk", Arial, sans-serif;
+  --font-body: "Geist", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --text-display: 700 144px/0.95 var(--font-display); /* Desktop até 144 px · Mobile 48 px. Hero e manifesto, poucas palavras. --type-hero: clamp(3rem, 9.2vw, 9rem). */
+  --text-h1: 700 96px/1.08 var(--font-display); /* Desktop 96 px · Mobile 44 px. Título principal. --type-h1: clamp(2.75rem, 6.4vw, 6rem). */
+  --text-h2: 700 72px/1.08 var(--font-display); /* Desktop 72 px · Mobile 36 px. Título de seção. --type-h2: clamp(2.25rem, 5vw, 4.5rem). */
+  --text-h3: 700 40px/1.08 var(--font-display); /* Desktop 40 px · Mobile 24 px. Título de projeto. --type-h3: clamp(1.5rem, 2.8vw, 2.5rem). */
+  --text-body-lg: 400 22px/1.6 var(--font-body); /* Body Large — Desktop 22 px · Mobile 18 px. Introdução. --type-body-lg: clamp(1.125rem, 1.5vw, 1.375rem). */
+  --text-body: 400 16px/1.6 var(--font-body); /* Body — 16 px. Texto corrente. */
+  --text-small: 400 14px/1.6 var(--font-body); /* Small — 14 px. Descrição curta. */
+  --text-mono-label: 400 12px/1.4 var(--font-mono); /* Mono Label — 12 px. Metadado editorial (text-transform: uppercase). */
+}
+.display {
+  font-family: var(--font-display);
+  font-size: 144px;
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+.h1 {
+  font-family: var(--font-display);
+  font-size: 96px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+.h2 {
+  font-family: var(--font-display);
+  font-size: 72px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+.h3 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+.body-lg {
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.small {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+}
