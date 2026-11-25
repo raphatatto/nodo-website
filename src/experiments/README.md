@@ -10,6 +10,16 @@ src/experiments/shared/                               # geometria procedural, Kn
 src/app/(internal)/(stage)/playground/<slug>/page.tsx # rota em tela cheia (sem Header/Footer do site)
 ```
 
+## Etapa 3 — Selected Work
+
+| Rota                 | Código             | Composição                                              |
+| -------------------- | ------------------ | ------------------------------------------------------- |
+| `/playground/work-a` | `work-a/WorkA.tsx` | Editorial Gallery — destaque + satélites assimétricos   |
+| `/playground/work-b` | `work-b/WorkB.tsx` | Full Width Showcase — um projeto por tela, texto sticky |
+| `/playground/work-c` | `work-c/WorkC.tsx` | Creative Index — sumário de revista + spreads           |
+
+Conteúdo em `src/content/projects.ts`; peças em `src/components/work/`. As páginas renderizam o Hero B antes da seção (prévias do índice abrem em `#work`).
+
 ## Etapa 2 — propostas de Hero
 
 | Rota                 | Código                                 | Objetos                                                                        |

@@ -44,7 +44,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      // Next desativa o smooth scroll durante transições de rota (globals.css usa smooth).
+      data-scroll-behavior="smooth"
+      // Extensões de navegador (ex.: LanguageTool, `data-lt-installed`) injetam atributos
+      // no <html> antes da hidratação. Vale só para os atributos deste elemento.
+      suppressHydrationWarning
+    >
       <body className="flex min-h-svh flex-col">
         <SkipLink />
         {children}

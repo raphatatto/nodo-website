@@ -5,7 +5,7 @@ import { Heading } from '@/components/ui/Heading';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Tag } from '@/components/ui/Tag';
 import { Text } from '@/components/ui/Text';
-import { proposals } from '@/experiments/shared/proposals';
+import { proposals, workProposals } from '@/experiments/shared/proposals';
 import { PreviewGrid } from './PreviewGrid';
 
 export const metadata: Metadata = { title: 'Playground' };
@@ -21,20 +21,39 @@ const planned = [
 export default function PlaygroundPage() {
   return (
     <>
-      <Section theme="dark" aria-labelledby="pg-title">
+      <Section theme="light" aria-labelledby="pg-title">
         <Container className="flex flex-col gap-14">
           <div className="flex flex-col gap-6">
-            <SectionLabel index="LAB">Etapa 2 — Art Direction · interno</SectionLabel>
+            <SectionLabel index="LAB">Etapa 3 — Selected Work · interno</SectionLabel>
             <Heading id="pg-title" as="h1" size="h1">
+              Três composições para os projetos
+            </Heading>
+            <Text size="lg" muted>
+              Cada proposta abre com o Hero B aprovado, seguido da seção Selected Work. As prévias
+              já começam na seção; clique para ver a transição Carbon → Paper em tela cheia. Os
+              quatro projetos são conceituais.
+            </Text>
+          </div>
+          <PreviewGrid
+            proposals={workProposals}
+            hash="#work"
+            label="Viewport da pré-visualização — Selected Work"
+          />
+        </Container>
+      </Section>
+
+      <Section theme="dark" aria-labelledby="pg-hero">
+        <Container className="flex flex-col gap-14">
+          <div className="flex flex-col gap-6">
+            <SectionLabel index="02">Etapa 2 — Art Direction · B aprovada</SectionLabel>
+            <Heading id="pg-hero" as="h2" size="h2">
               Três direções para o Hero
             </Heading>
             <Text size="lg" muted>
-              Compare as propostas lado a lado em desktop e mobile. Cada uma tem uma ficha com
-              conceito, referências, objetos, motion previsto e riscos. Clique para abrir em tela
-              cheia.
+              Referência das propostas de Hero. A direção B (The Knot) foi escolhida.
             </Text>
           </div>
-          <PreviewGrid proposals={proposals} />
+          <PreviewGrid proposals={proposals} label="Viewport da pré-visualização — Hero" />
         </Container>
       </Section>
 

@@ -2,10 +2,12 @@
  * Fonte única das três direções de Hero (Etapa 2 — Art Direction).
  * Alimenta a ficha de cada proposta e o índice /playground.
  */
-export type ProposalSlug = 'hero-a' | 'hero-b' | 'hero-c';
+export type ProposalGroup = 'hero' | 'work';
+export type ProposalSlug = 'hero-a' | 'hero-b' | 'hero-c' | 'work-a' | 'work-b' | 'work-c';
 
 export type Proposal = {
   slug: ProposalSlug;
+  group: ProposalGroup;
   code: 'A' | 'B' | 'C';
   direction: string;
   name: string;
@@ -18,6 +20,7 @@ export type Proposal = {
 export const proposals: Proposal[] = [
   {
     slug: 'hero-a',
+    group: 'hero',
     code: 'A',
     direction: 'Editorial Minimalism',
     name: 'Signal Line',
@@ -79,6 +82,7 @@ export const proposals: Proposal[] = [
   },
   {
     slug: 'hero-b',
+    group: 'hero',
     code: 'B',
     direction: 'Immersive Futurism',
     name: 'The Knot',
@@ -141,6 +145,7 @@ export const proposals: Proposal[] = [
   },
   {
     slug: 'hero-c',
+    group: 'hero',
     code: 'C',
     direction: 'Editorial Futurism',
     name: 'Connected Index',
@@ -203,6 +208,151 @@ export const proposals: Proposal[] = [
   },
 ];
 
+/** Etapa 3 — três composições para Selected Work. */
+export const workProposals: Proposal[] = [
+  {
+    slug: 'work-a',
+    group: 'work',
+    code: 'A',
+    direction: 'Editorial Gallery',
+    name: 'Editorial Gallery',
+    theme: 'Paper · galeria',
+    summary:
+      'Um projeto protagonista em grande escala, seguido de satélites com proporções diferentes numa grade assimétrica.',
+    objects: ['16:9 destaque', '4:5', '3:2', '21:9'],
+    notes: [
+      {
+        label: 'Conceito',
+        value:
+          'Galeria digital com hierarquia clara: o primeiro projeto abre a seção como capa de revista; os demais orbitam em escalas menores, com espaço negativo entre eles.',
+      },
+      {
+        label: 'Referências',
+        value:
+          'Basement Studio (projeto protagonista, capas grandes), Bakken & Bæck (contenção editorial). DS §08: composições assimétricas alinhadas à malha.',
+      },
+      {
+        label: 'Composição',
+        value:
+          'Cabeçalho com manchete oversized à esquerda e introdução à direita. Destaque 16:9 na largura do container. Satélites: 4:5 nas colunas 1–5 (deslocado para baixo), 3:2 nas colunas 7–12 e 21:9 nas colunas 3–12.',
+      },
+      {
+        label: 'Tipografia',
+        value:
+          'Manchete até 152px; títulos de projeto em H2 (destaque) e H3 (satélites); meta em IBM Plex Mono com selo "Conceito" em Navy.',
+      },
+      {
+        label: 'Motion (Etapa 5)',
+        value:
+          'Reveal das capas por máscara (M01) e expansão do destaque ao entrar na tela (M02). Hoje: zoom sutil da imagem no hover, em CSS.',
+      },
+      {
+        label: 'Mobile',
+        value: 'Coluna única preservando as proporções diferentes de cada capa.',
+      },
+      {
+        label: 'Riscos',
+        value:
+          'Depende de um projeto forte para o destaque; com muitos projetos, a grade precisa de regras de rotação para não virar um mosaico aleatório.',
+      },
+    ],
+  },
+  {
+    slug: 'work-b',
+    group: 'work',
+    code: 'B',
+    direction: 'Full Width Showcase',
+    name: 'Full Width Showcase',
+    theme: 'Paper · cinematográfico',
+    summary:
+      'Um projeto por tela: imagem em grande escala alternando o lado e índice gigante numa coluna sticky.',
+    objects: ['16:10', '4:5', 'sticky', 'progresso'],
+    notes: [
+      {
+        label: 'Conceito',
+        value:
+          'Ritmo cinematográfico: cada projeto ocupa quase uma tela inteira, com tempo para ser visto. A rolagem conduz a narrativa sem sequestrá-la.',
+      },
+      {
+        label: 'Referências',
+        value: 'Lusion (um assunto por cena), Work & Co (apresentação objetiva de soluções).',
+      },
+      {
+        label: 'Composição',
+        value:
+          'Imagem em ~2/3 da largura (16:10) alternando esquerda e direita; retrato em 4:5. A coluna de texto (índice em Navy, título, resumo, meta, disciplinas, progresso 01—04) fica sticky enquanto a imagem rola.',
+      },
+      {
+        label: 'Tipografia',
+        value: 'Manchete até 208px; numerais de 72–176px em Navy; títulos em H2.',
+      },
+      {
+        label: 'Motion (Etapa 5)',
+        value:
+          'Expansão da imagem vinculada à rolagem (M02, ScrollTrigger) e barra de progresso animada. Hoje: sticky em CSS e zoom sutil no hover.',
+      },
+      {
+        label: 'Mobile',
+        value: 'Imagem em cima, texto embaixo, sem sticky.',
+      },
+      {
+        label: 'Riscos',
+        value:
+          'Seção longa (≈ 4 telas) na Home; talvez seja melhor limitar a 3 projetos e levar o restante para /work.',
+      },
+    ],
+  },
+  {
+    slug: 'work-c',
+    group: 'work',
+    code: 'C',
+    direction: 'Creative Index',
+    name: 'Creative Index',
+    theme: 'Paper · revista',
+    summary:
+      'Sumário tipográfico de revista que revela as capas no hover, seguido de spreads com imagem e ficha técnica.',
+    objects: ['sumário', 'hover', 'spreads', 'ficha técnica'],
+    notes: [
+      {
+        label: 'Conceito',
+        value:
+          'O portfólio como edição: primeiro o índice (o leitor vê tudo de uma vez), depois as matérias. A tipografia é a protagonista; as imagens aparecem quando chamadas.',
+      },
+      {
+        label: 'Referências',
+        value:
+          'DS · 2-editorial-design.png (sumário e numeração), Phenomenon (apresentação de produto com fichas), revistas de design.',
+      },
+      {
+        label: 'Composição',
+        value:
+          'Masthead (N° 01 · Selected Work · Índice), manchete em duas linhas e sumário com colunas N°/Projeto/Serviço/Ano/Status. Spreads alternados: imagem (4:3 ou 4:5) + ficha técnica em mono, com numeral gigante em Border Light ao fundo.',
+      },
+      {
+        label: 'Tipografia',
+        value:
+          'Títulos do sumário até 72px; numerais de fundo até 352px em tom de papel; fichas técnicas em IBM Plex Mono.',
+      },
+      {
+        label: 'Motion (Etapa 5)',
+        value:
+          'Capa que segue o cursor sobre o sumário (M06) e troca suave entre capas. Hoje: capa revelada no hover em CSS (desktop) e deslocamento do título.',
+      },
+      {
+        label: 'Mobile',
+        value: 'Sumário com miniatura inline; spreads empilhados.',
+      },
+      {
+        label: 'Riscos',
+        value:
+          'O hover não existe no touch (por isso há miniaturas no mobile). É a mais densa, então exige rigor tipográfico para não parecer uma tabela.',
+      },
+    ],
+  },
+];
+
+export const allProposals: Proposal[] = [...proposals, ...workProposals];
+
 export function getProposal(slug: ProposalSlug): Proposal {
-  return proposals.find((p) => p.slug === slug)!;
+  return allProposals.find((p) => p.slug === slug)!;
 }

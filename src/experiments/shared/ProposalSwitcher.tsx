@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSyncExternalStore } from 'react';
 import { cn } from '@/lib/cn';
-import { proposals } from './proposals';
+import { allProposals } from './proposals';
 
 const noop = () => () => {};
 
@@ -20,11 +20,13 @@ export function ProposalSwitcher() {
     () => false,
   );
 
-  if (!isTopLevel) return null;
+  const current = allProposals.find((p) => pathname === `/playground/${p.slug}`);
+  if (!isTopLevel || !current) return null;
+  const group = allProposals.filter((p) => p.group === current.group);
 
   return (
     <nav
-      aria-label="Propostas de Hero"
+      aria-label={current.group === 'hero' ? 'Propostas de Hero' : 'Propostas de Selected Work'}
       data-theme="dark"
       className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-pill border border-line bg-graphite/90 p-1 font-mono text-label uppercase shadow-lg backdrop-blur"
     >
@@ -34,18 +36,18 @@ export function ProposalSwitcher() {
       >
         Índice
       </Link>
-      {proposals.map((p) => {
+      {group.map((p) => {
         const href = `/playground/${p.slug}`;
-        const current = pathname === href;
+        const isCurrent = pathname === href;
         return (
           <Link
             key={p.slug}
             href={href}
-            aria-current={current ? 'page' : undefined}
+            aria-current={isCurrent ? 'page' : undefined}
             title={`${p.code} — ${p.direction}`}
             className={cn(
               'inline-flex size-10 items-center justify-center rounded-pill transition-colors duration-fast',
-              current ? 'bg-paper text-carbon' : 'text-fg hover:bg-steel',
+              isCurrent ? 'bg-paper text-carbon' : 'text-fg hover:bg-steel',
             )}
           >
             {p.code}

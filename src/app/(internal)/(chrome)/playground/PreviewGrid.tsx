@@ -46,12 +46,21 @@ function ScaledFrame({ src, title, viewport }: { src: string; title: string; vie
   );
 }
 
-export function PreviewGrid({ proposals }: { proposals: Proposal[] }) {
+export function PreviewGrid({
+  proposals,
+  hash = '',
+  label = 'Viewport da pré-visualização',
+}: {
+  proposals: Proposal[];
+  /** Âncora aberta no iframe (ex.: "#work" mostra a seção em vez do Hero). */
+  hash?: string;
+  label?: string;
+}) {
   const [viewport, setViewport] = useState<Viewport>('desktop');
 
   return (
     <div className="flex flex-col gap-8">
-      <div role="group" aria-label="Viewport da pré-visualização" className="flex gap-2">
+      <div role="group" aria-label={label} className="flex gap-2">
         {(Object.keys(VIEWPORTS) as Viewport[]).map((key) => (
           <button
             key={key}
@@ -85,7 +94,7 @@ export function PreviewGrid({ proposals }: { proposals: Proposal[] }) {
             >
               <div className={cn(viewport === 'mobile' && 'mx-auto w-full max-w-72')}>
                 <ScaledFrame
-                  src={`/playground/${p.slug}`}
+                  src={`/playground/${p.slug}${hash}`}
                   title={`Pré-visualização da proposta ${p.code}`}
                   viewport={viewport}
                 />

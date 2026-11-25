@@ -42,7 +42,9 @@ src/components/ui/          primitivos: Button, IconButton, Heading, Text, Secti
 src/components/layout/      Container, Section, SiteChrome, Header, MobileMenu (client), NavItems, Footer, SkipLink
 src/components/sections/    seções de página (hoje só HeroPlaceholder, provisório)
 src/experiments/            protótipos do /playground (ver README da pasta); shared/ = geometria procedural, KnotFigure, Metal, fichas
-src/config/site.ts          copy institucional, navegação (flag `available`), contatos
+src/components/work/        ProjectCover, ProjectMeta, ProjectLink (portfólio)
+src/content/projects.ts     projetos (fonte única p/ Selected Work, /work, /work/[slug]); conceitos marcados como tal
+src/config/site.ts          copy institucional, navegação (flag `available`), serviços, contatos
 src/lib/                    cn, internalRoutesEnabled
 public/{brand,images,projects,models,textures,videos}/
 docs/ASSETS.md              origem e licença de todo recurso de terceiros
@@ -103,7 +105,7 @@ Não fazer commit nem push sem autorização explícita.
 
 1. Foundation ✅ (esta base)
 2. Art Direction — três propostas visuais para o Hero (`/playground/hero-a|b|c`) — em revisão
-3. Selected Work e apresentação de projetos
+3. Selected Work e apresentação de projetos — em revisão (`/playground/work-a|b|c`)
 4. Demais seções e páginas
 5. Motion Design e transições
 6. Objetos 3D e Creative Development
