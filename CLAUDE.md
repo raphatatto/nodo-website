@@ -34,11 +34,14 @@ Next 16 tem APIs diferentes das versões anteriores: consultar `node_modules/nex
 
 ```
 src/app/                    rotas; layout.tsx (fontes, Header, Footer, SkipLink); globals.css (tokens → Tailwind)
-src/app/(internal)/         /design-system e /playground — noindex, 404 em produção
+src/app/(site)/             rotas públicas (layout com Header/Footer via SiteChrome)
+src/app/(internal)/         rotas internas — noindex, 404 em produção
+  (chrome)/                 /design-system, /playground (índice) — com moldura do site
+  (stage)/                  /playground/hero-a|b|c — sem moldura; cada proposta controla a 1ª dobra
 src/components/ui/          primitivos: Button, IconButton, Heading, Text, SectionLabel, Tag, TextField, Logo
-src/components/layout/      Container, Section, Header, MobileMenu (client), NavItems, Footer, SkipLink
+src/components/layout/      Container, Section, SiteChrome, Header, MobileMenu (client), NavItems, Footer, SkipLink
 src/components/sections/    seções de página (hoje só HeroPlaceholder, provisório)
-src/experiments/            protótipos do /playground (ver README da pasta)
+src/experiments/            protótipos do /playground (ver README da pasta); shared/ = geometria procedural, KnotFigure, Metal, fichas
 src/config/site.ts          copy institucional, navegação (flag `available`), contatos
 src/lib/                    cn, internalRoutesEnabled
 public/{brand,images,projects,models,textures,videos}/
@@ -99,7 +102,7 @@ Não fazer commit nem push sem autorização explícita.
 ## Roadmap
 
 1. Foundation ✅ (esta base)
-2. Art Direction — três propostas visuais para o Hero (no `/playground`)
+2. Art Direction — três propostas visuais para o Hero (`/playground/hero-a|b|c`) — em revisão
 3. Selected Work e apresentação de projetos
 4. Demais seções e páginas
 5. Motion Design e transições

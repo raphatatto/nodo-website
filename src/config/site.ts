@@ -27,6 +27,13 @@ export const site = {
     { label: 'Estúdio', href: '/studio', available: false },
     { label: 'Contato', href: '/contact', available: false },
   ] satisfies NavItem[],
+  /** Oferta comercial — DS §01. */
+  services: [
+    { index: '01', name: 'Web Experiences', description: 'Sites e experiências digitais' },
+    { index: '02', name: 'Digital Products', description: 'Sistemas e produtos digitais' },
+    { index: '03', name: 'Automation', description: 'Automação e integrações' },
+    { index: '04', name: 'Artificial Intelligence', description: 'IA aplicada' },
+  ],
   /** Contatos reais ainda não definidos — não inventar (DS §16). */
   contact: {
     email: null as string | null,

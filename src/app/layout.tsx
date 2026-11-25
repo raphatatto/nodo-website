@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import { site } from '@/config/site';
-import { Footer } from '@/components/layout/Footer';
-import { Header } from '@/components/layout/Header';
 import { SkipLink } from '@/components/layout/SkipLink';
 import './globals.css';
 
@@ -49,11 +47,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="flex min-h-svh flex-col">
         <SkipLink />
-        <Header />
-        <main id="conteudo" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
