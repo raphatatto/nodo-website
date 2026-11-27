@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Text } from '@/components/ui/Text';
-import { KnotFigure } from '../shared/KnotFigure';
+import { KnotFigure } from '@/components/art/KnotFigure';
 
 /*
  * A — Editorial Minimalism · "Signal Line"

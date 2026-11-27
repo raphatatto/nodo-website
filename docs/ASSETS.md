@@ -60,7 +60,23 @@ Adicionar uma linha por recurso **antes** de usá-lo em uma rota pública.
 | `public/projects/digital-experience/cover.jpg`    | Capa de projeto (conceito) | Original NODO — fornecido pelo usuário                                                                                       | NODO                                                       | Próprio (uso permitido, confirmado pelo usuário)                           | Não                                  | Reduzido de 2160 para 1800 px; JPG q86                                                                                                                 | 2026-11-25 | Etapa 3     |
 | `public/projects/connected-operations/cover.jpg`  | Capa de projeto (conceito) | Original NODO — fornecido pelo usuário                                                                                       | NODO                                                       | Próprio (uso permitido, confirmado pelo usuário)                           | Não                                  | JPG q86 (1448×1086)                                                                                                                                    | 2026-11-25 | Etapa 3     |
 
-**Uso restrito:** o render acima é usado apenas na rota interna `/playground/hero-b` (404 em produção). Antes do lançamento, substituir por render próprio de The Knot (slot em `src/experiments/hero-b/render.ts`, com prompt de geração).
+**Uso atual (Etapa 4):** o render acima é usado no **Hero público da Home** (`src/components/sections/hero/render.ts`), com crédito na legenda do Hero, e na rota interna `/playground/hero-b`. A Unsplash License permite uso comercial sem atribuição obrigatória (crédito mantido por transparência). É **provisório**: antes do lançamento, substituir pelo render próprio de The Knot (especificação abaixo).
+
+### The Knot original — especificação do render (pendente)
+
+| Item                 | Especificação                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Conceito             | O01 The Knot — elo tubular contínuo (nó (3,4)), conexão e continuidade (DS §07)                                                |
+| Prompt               | O de `NODO/README.md` §07 / `render.ts`, mantendo a curva (3,4) para coincidir com a futura versão R3F                         |
+| Dimensão / proporção | Master 3840×2160 (16:9); exportar 2400 px de largura                                                                           |
+| Enquadramento        | Centro do objeto em ~64% / 46% do quadro (mesmo `HERO_CENTER` de `FlowOrbits.tsx`); espaço negativo à esquerda para a headline |
+| Material             | Cromo polido + alumínio escovado; reflexos Navy #17346E discretos                                                              |
+| Iluminação           | Softboxes de estúdio; fundo Carbon #101010 exato (funde com `mix-blend-lighten`)                                               |
+| Formato / local      | AVIF + WebP em `public/images/hero/knot-v1.{avif,webp}`; master fora do repositório                                            |
+| Finalidade           | Hero (LCP) e poster da cena WebGL (`data-scene-fallback`)                                                                      |
+| Alternativa estática | O próprio render; fallback procedural `KnotFigure` (`heroRender = null`)                                                       |
+| Substituição futura  | The Knot em R3F (Etapa 6) com a mesma curva e enquadramento; o render vira poster até o primeiro frame                         |
+| Produção             | Blender (gratuito) ou ferramenta de IA — sem serviços pagos sem autorização                                                    |
 
 ### Referências visuais — não publicar
 

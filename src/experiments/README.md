@@ -10,17 +10,19 @@ src/experiments/shared/                               # geometria procedural, Kn
 src/app/(internal)/(stage)/playground/<slug>/page.tsx # rota em tela cheia (sem Header/Footer do site)
 ```
 
-## Etapa 3 — Selected Work
+## Etapa 3 — Selected Work · ✅ B aprovada
 
-| Rota                 | Código             | Composição                                              |
-| -------------------- | ------------------ | ------------------------------------------------------- |
-| `/playground/work-a` | `work-a/WorkA.tsx` | Editorial Gallery — destaque + satélites assimétricos   |
-| `/playground/work-b` | `work-b/WorkB.tsx` | Full Width Showcase — um projeto por tela, texto sticky |
-| `/playground/work-c` | `work-c/WorkC.tsx` | Creative Index — sumário de revista + spreads           |
+| Rota                 | Código             | Composição                                                            |
+| -------------------- | ------------------ | --------------------------------------------------------------------- |
+| `/playground/work-a` | `work-a/WorkA.tsx` | Editorial Gallery — destaque + satélites assimétricos                 |
+| `/playground/work-b` | `work-b/WorkB.tsx` | **Aprovada** — Full Width Showcase: um projeto por tela, texto sticky |
+| `/playground/work-c` | `work-c/WorkC.tsx` | Creative Index — sumário de revista + spreads                         |
+
+Aprovadas: Hero B e Work B (registro em `CLAUDE.md` → Decisões visuais aprovadas). As propostas continuam aqui como referência e não são importadas por rotas públicas: a versão de produção é promovida para `src/components/`.
 
 Conteúdo em `src/content/projects.ts`; peças em `src/components/work/`. As páginas renderizam o Hero B antes da seção (prévias do índice abrem em `#work`).
 
-## Etapa 2 — propostas de Hero
+## Etapa 2 — propostas de Hero · ✅ B aprovada
 
 | Rota                 | Código                                 | Objetos                                                                        |
 | -------------------- | -------------------------------------- | ------------------------------------------------------------------------------ |

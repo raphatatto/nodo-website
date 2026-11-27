@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Text } from '@/components/ui/Text';
-import { round } from '../shared/geometry';
-import { KnotFigure } from '../shared/KnotFigure';
+import { round } from '@/lib/geometry';
+import { KnotFigure } from '@/components/art/KnotFigure';
 import { heroBRender } from './render';
 
 /*

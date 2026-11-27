@@ -158,6 +158,92 @@
   }
 }
 
+/* Controle do site "Reduzir movimento" (Footer, WCAG 2.2.2) — mesmo efeito da preferência do SO. */
+html[data-motion='reduced'] {
+  --motion-fast: 0ms;
+  --motion-standard: 0ms;
+  --motion-reveal: 0ms;
+  --motion-scene: 0ms;
+  scroll-behavior: auto;
+}
+html[data-motion='reduced'] :is(.nodo-float, .nodo-orbit-spin, .nodo-specimen-spin) {
+  animation: none;
+}
+
+/*
+ * Motion CSS de produção (sem JS). GSAP só na Etapa 5 — ver ganchos data-* no CLAUDE.md.
+ * Valores herdados do Hero B aprovado: flutuação de 14s e órbita de 140s, quase imperceptíveis.
+ */
+@keyframes nodo-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -1.2%, 0);
+  }
+}
+
+@keyframes nodo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ * Expertise — palco do objeto do serviço aberto (CSS :has, zero JS).
+ * O <details name="expertise"> aberto decide qual objeto aparece; sem item aberto, o nó.
+ */
+.expertise [data-stage-object] {
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0) scale(0.98);
+  transition:
+    opacity var(--motion-reveal) var(--ease-out),
+    transform var(--motion-reveal) var(--ease-out);
+}
+.expertise:has(details[data-service='web'][open]) [data-stage-object='experience'],
+.expertise:has(details[data-service='products'][open]) [data-stage-object='structure'],
+.expertise:has(details[data-service='automation'][open]) [data-stage-object='flow'],
+.expertise:has(details[data-service='ai'][open]) [data-stage-object='intelligence'],
+.expertise:not(:has(details[open])) [data-stage-object='knot'] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Abertura suave do accordion onde houver suporte (Chromium 131+); nos demais, abre seco. */
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    .expertise {
+      interpolate-size: allow-keywords;
+    }
+    .expertise details::details-content {
+      height: 0;
+      overflow: clip;
+      transition:
+        height var(--motion-standard) var(--ease-out),
+        content-visibility var(--motion-standard) allow-discrete;
+    }
+    .expertise details[open]::details-content {
+      height: auto;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nodo-float {
+    animation: nodo-float 14s var(--ease-in-out) infinite;
+  }
+  .nodo-orbit-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nodo-spin 140s linear infinite;
+  }
+  /* Labs: espécime girando muito devagar (uma volta a cada 3 min) */
+  .nodo-specimen-spin {
+    animation: nodo-spin 180s linear infinite;
+  }
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;

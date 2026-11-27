@@ -24,14 +24,14 @@ export default function PlaygroundPage() {
       <Section theme="light" aria-labelledby="pg-title">
         <Container className="flex flex-col gap-14">
           <div className="flex flex-col gap-6">
-            <SectionLabel index="LAB">Etapa 3 — Selected Work · interno</SectionLabel>
+            <SectionLabel index="03">Etapa 3 — Selected Work · B aprovada</SectionLabel>
             <Heading id="pg-title" as="h1" size="h1">
               Três composições para os projetos
             </Heading>
             <Text size="lg" muted>
-              Cada proposta abre com o Hero B aprovado, seguido da seção Selected Work. As prévias
-              já começam na seção; clique para ver a transição Carbon → Paper em tela cheia. Os
-              quatro projetos são conceituais.
+              Referência das propostas de Selected Work. A direção B (Full Width Showcase) foi
+              escolhida e está na Home. As prévias já começam na seção; os quatro projetos são
+              conceituais.
             </Text>
           </div>
           <PreviewGrid

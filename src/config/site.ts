@@ -18,15 +18,22 @@ export const site = {
     'Criamos sites, sistemas, automações e soluções de inteligência artificial sob medida para transformar negócios.',
   locale: 'pt-BR',
   cta: {
-    primary: { label: 'Iniciar um projeto', href: '/contact', available: false },
-    secondary: { label: 'Explorar projetos', href: '/work', available: false },
+    primary: { label: 'Iniciar um projeto', href: '/contact', available: true },
+    secondary: { label: 'Explorar projetos', href: '/work', available: true },
   },
+  /**
+   * Navegação principal (DS §09, ajustada na Etapa 4): "Contato" virou o CTA
+   * "Iniciar um projeto" (sempre visível) e "Labs" entrou na lista.
+   */
   nav: [
-    { label: 'Projetos', href: '/work', available: false },
-    { label: 'Serviços', href: '/expertise', available: false },
-    { label: 'Estúdio', href: '/studio', available: false },
-    { label: 'Contato', href: '/contact', available: false },
+    { label: 'Projetos', href: '/work', available: true },
+    { label: 'Serviços', href: '/expertise', available: true },
+    { label: 'Estúdio', href: '/studio', available: true },
+    { label: 'Labs', href: '/labs', available: true },
   ] satisfies NavItem[],
+  legal: {
+    privacy: { label: 'Privacidade', href: '/privacy', available: true },
+  },
   /** Oferta comercial — DS §01. */
   services: [
     { index: '01', name: 'Web Experiences', description: 'Sites e experiências digitais' },

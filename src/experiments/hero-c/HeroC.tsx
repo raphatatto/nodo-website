@@ -8,8 +8,8 @@ import { Logo } from '@/components/ui/Logo';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/cn';
-import { fibonacciSphere, project, rotate, round } from '../shared/geometry';
-import { MetalCube, MetalDefs } from '../shared/Metal';
+import { fibonacciSphere, project, rotate, round } from '@/lib/geometry';
+import { MetalCube, MetalDefs } from '@/components/art/Metal';
 
 /*
  * C — Editorial Futurism · "Connected Index"

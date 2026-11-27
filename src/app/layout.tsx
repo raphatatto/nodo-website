@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import { site } from '@/config/site';
 import { SkipLink } from '@/components/layout/SkipLink';
+import { motionPreferenceScript } from '@/lib/motion';
 import './globals.css';
 
 // Tipografia do DS §06 — ligada a --font-display/body/mono em globals.css.
@@ -49,11 +50,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${display.variable} ${body.variable} ${mono.variable}`}
       // Next desativa o smooth scroll durante transições de rota (globals.css usa smooth).
       data-scroll-behavior="smooth"
-      // Extensões de navegador (ex.: LanguageTool, `data-lt-installed`) injetam atributos
-      // no <html> antes da hidratação. Vale só para os atributos deste elemento.
+      // Atributos alterados antes da hidratação: extensões (ex.: LanguageTool,
+      // `data-lt-installed`) e a preferência "Reduzir movimento" (`data-motion`).
+      // Vale só para os atributos deste elemento.
       suppressHydrationWarning
     >
       <body className="flex min-h-svh flex-col">
+        {/* reaplica "Reduzir movimento" antes da 1ª pintura (sem flash de animação) */}
+        <script dangerouslySetInnerHTML={{ __html: motionPreferenceScript }} />
         <SkipLink />
         {children}
       </body>

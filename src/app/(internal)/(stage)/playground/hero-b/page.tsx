@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { HeroB } from '@/experiments/hero-b/HeroB';
-import { KnotFigure } from '@/experiments/shared/KnotFigure';
+import { KnotFigure } from '@/components/art/KnotFigure';
 import { ProposalNotes } from '@/experiments/shared/ProposalNotes';
 
 export const metadata: Metadata = { title: 'Hero B — The Knot' };

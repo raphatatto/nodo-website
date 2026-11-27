@@ -1,5 +1,12 @@
 import { cn } from '@/lib/cn';
-import { depthSortedSegments, project, rotate, round, torusKnot, type Projected } from './geometry';
+import {
+  depthSortedSegments,
+  project,
+  rotate,
+  round,
+  torusKnot,
+  type Projected,
+} from '@/lib/geometry';
 
 type KnotFigureProps = {
   /**
